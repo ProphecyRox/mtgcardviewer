@@ -1,16 +1,25 @@
 {% load static %}
 
-{% if first_five_cards %}
-    <ul>
-        {% for card in first_five_cards %}
-            <li>
-                <a href="/viewer/details/{{ card.name }}">
-                    {{card.name}}
-                    <!-- <img src={% static "viewer/{{ card.image }}" %}/> -->
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
-{% else %}
-    There are no cards added yet.
-{% endif %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'viewer/style.css' %}">
+    </head>
+    <body>
+        {% if first_five_cards %}
+            <ul>
+                {% for card in first_five_cards %}
+                    <li>
+                        <a href="/viewer/details/{{ card.name }}">
+                            {{card.name}}
+                            <!-- <img src={% static "viewer/{{ card.image }}" %}/> -->
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            There are no cards added yet.
+        {% endif %}
+</body>
+</html>
