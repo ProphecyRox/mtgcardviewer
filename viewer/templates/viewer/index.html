@@ -1,9 +1,16 @@
-{% if latest_question_list %}
+{% load static %}
+
+{% if first_five_cards %}
     <ul>
-    {% for question in latest_question_list %}
-        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
-    {% endfor %}
+        {% for card in first_five_cards %}
+            <li>
+                <a href="/viewer/details/{{ card.name }}">
+                    {{card.name}}
+                    <!-- <img src={% static "viewer/{{ card.image }}" %}/> -->
+                </a>
+            </li>
+        {% endfor %}
     </ul>
 {% else %}
-    <p>No polls are available.</p>
+    There are no cards added yet.
 {% endif %}
