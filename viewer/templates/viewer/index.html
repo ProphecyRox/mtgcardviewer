@@ -2,15 +2,33 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en-US">
     <head>
+        <meta charset="utf-8">
+        <title>MTG Card Viewer</title>
+        <!-- TODO: how does static linking work? -->
         <link rel="stylesheet" type="text/css" href="{% static 'viewer/style.css' %}">
     </head>
     <body>
+        <h1>MTG Viewer</h1>
+        <ul>
+            <li>
+                <a href="">Home</a>
+            </li>
+            <li>
+                <a href="">Database</a>
+            </li>
+            <li>
+                <a href="">Contact Me</a>
+            </li>
+        </ul>
+        <h2>Most Popular Cards</h2>
         {% if first_five_cards %}
             <ul>
                 {% for card in first_five_cards %}
                     <li>
+                        <!-- TODO: show images dynamically -->
+                        <img src="../../static/viewer/Image.ashx.png">
                         <a href="/viewer/details/{{ card.name }}">
                             {{card.name}}
                             <!-- <img src={% static "viewer/{{ card.image }}" %}/> -->
@@ -21,5 +39,15 @@
         {% else %}
             There are no cards added yet.
         {% endif %}
-</body>
+        <h2>About</h2>
+        <p>
+            This is a third-party website that allows you to search for any card in the <em>Arabian Nights</em> expansion.
+            It does not contain any other expansions right now.
+        </p>
+        <h2>Reporting Bugs</h2>
+        <p>
+            If there are any errors in this database, <em>please</em> let me know in the Contact Me page.
+            I will fix them promptly.
+        </p>
+    </body>
 </html>
