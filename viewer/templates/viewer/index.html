@@ -10,44 +10,60 @@
         <link rel="stylesheet" type="text/css" href="{% static 'viewer/style.css' %}">
     </head>
     <body>
-        <h1>MTG Viewer</h1>
-        <ul>
-            <li>
-                <a href="">Home</a>
-            </li>
-            <li>
-                <a href="">Database</a>
-            </li>
-            <li>
-                <a href="">Contact Me</a>
-            </li>
-        </ul>
-        <h2>Most Popular Cards</h2>
-        {% if first_five_cards %}
+        <header>
+            <h1>MTG Viewer</h1>
+        </header>
+
+        <!-- Navigation menu -->
+        <nav>
             <ul>
-                {% for card in first_five_cards %}
-                    <li>
-                        <!-- TODO: show images dynamically -->
-                        <img src="../../static/viewer/Image.ashx.png">
-                        <a href="/viewer/details/{{ card.name }}">
-                            {{card.name}}
-                            <!-- <img src={% static "viewer/{{ card.image }}" %}/> -->
-                        </a>
-                    </li>
-                {% endfor %}
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">Database</a>
+                </li>
+                <li>
+                    <a href="">Contact Me</a>
+                </li>
             </ul>
-        {% else %}
-            There are no cards added yet.
-        {% endif %}
-        <h2>About</h2>
-        <p>
-            This is a third-party website that allows you to search for any card in the <em>Arabian Nights</em> expansion.
-            It does not contain any other expansions right now.
-        </p>
-        <h2>Reporting Bugs</h2>
-        <p>
-            If there are any errors in this database, <em>please</em> let me know in the Contact Me page.
-            I will fix them promptly.
-        </p>
+        </nav>
+
+        <main>
+            <article>
+                <h2>Most Popular Cards</h2>
+                {% if first_five_cards %}
+                    <ul>
+                        {% for card in first_five_cards %}
+                            <li>
+                                <!-- TODO: show images dynamically -->
+                                <!-- <img src="../../static/viewer/Image.ashx.png"> -->
+                                <a href="/viewer/details/{{ card.name }}">
+                                    {{card.name}}
+                                    <!-- <img src={% static "viewer/{{ card.image }}" %}/> -->
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    There are no cards added yet.
+                {% endif %}
+
+                <h2>About</h2>
+                <p>
+                    This is a third-party website that allows you to search for any card in the <em>Arabian Nights</em> expansion.
+                    It does not contain any other expansions right now.
+                </p>
+
+                <h2>Reporting Bugs</h2>
+                <p>
+                    If there are any errors in this database, <em>please</em> let me know in the Contact Me page.
+                    I will fix them promptly.
+                </p>
+            </article>
+        </main>
+        <footer>
+            <p>Copyright 2021 ProphecyRox</p>
+        </footer>
     </body>
 </html>

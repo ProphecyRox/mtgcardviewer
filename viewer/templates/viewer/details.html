@@ -2,12 +2,40 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en-US">
     <head>
         <meta charset="utf-8">
+        <title>MTG Card Viewer</title>
+        <!-- TODO: how does static linking work? -->
         <link rel="stylesheet" type="text/css" href="{% static 'viewer/style.css' %}">
     </head>
     <body>
-        This card is called {{ name }}
+        <!-- Navigation menu -->
+        <h1>MTG Viewer</h1>
+        <ul>
+            <li>
+                <a href="">Home</a>
+            </li>
+            <li>
+                <a href="">Database</a>
+            </li>
+            <li>
+                <a href="">Contact Me</a>
+            </li>
+        </ul>
+        <dl>
+            <dt>
+                Name
+            </dt>
+            <dd>
+                {{ name }}
+            </dd>
+            <dt>
+                Mana Cost
+            </dt>
+            <dd>
+                {{ mana_cost }}
+            </dd>
+        </dl>
     </body>
 </html>
