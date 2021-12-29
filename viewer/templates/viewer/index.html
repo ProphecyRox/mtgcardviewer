@@ -1,4 +1,4 @@
-{% load static %}
+<!--{% load static %} -->
 
 <!DOCTYPE html>
 
@@ -16,24 +16,23 @@
 
         <!-- Navigation menu -->
         <nav>
-            <ul>
-                <li>
-                    <a href="">Home</a>
-                </li>
-                <li>
-                    <a href="">Database</a>
-                </li>
-                <li>
-                    <a href="">Contact Me</a>
-                </li>
+            <section>
+                Home
+            </section>
+            <section>
+                Database
+            </section>
+            <section>
+                Contact Me
+            </section>
             </ul>
         </nav>
 
         <main>
-            <article>
+            <section>
                 <h2>Most Popular Cards</h2>
                 {% if first_five_cards %}
-                    <ul>
+                    <ol>
                         {% for card in first_five_cards %}
                             <li>
                                 <!-- TODO: show images dynamically -->
@@ -44,26 +43,30 @@
                                 </a>
                             </li>
                         {% endfor %}
-                    </ul>
+                    </ol>
                 {% else %}
                     There are no cards added yet.
                 {% endif %}
+            </section>
 
+            <section>
                 <h2>About</h2>
                 <p>
                     This is a third-party website that allows you to search for any card in the <em>Arabian Nights</em> expansion.
                     It does not contain any other expansions right now.
                 </p>
+            </section>
 
+            <section>
                 <h2>Reporting Bugs</h2>
                 <p>
                     If there are any errors in this database, <em>please</em> let me know in the Contact Me page.
                     I will fix them promptly.
                 </p>
-            </article>
+            </section>
         </main>
         <footer>
-            <p>Copyright 2021 ProphecyRox</p>
+            Copyright 2021 ProphecyRox
         </footer>
     </body>
 </html>

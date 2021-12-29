@@ -1,12 +1,61 @@
-a:link{
-    color: brown
-}
-
-a:visited{
-    color: red
-}
-
 body {
+    /* Remove default body margin
+        and center the body horizontally */
+    margin: 0 auto;
+    width: 900px;
+
     background-color: #a0a0a0;
     font-family: system-ui, sans-serif;
+}
+
+/* Color all links */
+a:link {
+    color: brown;
+}
+
+header {
+    /* Add manual spacing
+        TODO: not sure if this is properly done */
+    padding: 20px 0px;
+}
+
+h1 {
+    /* Center the header title */
+    text-align: center;
+    /* Remove default header margin */
+    margin: 0px;
+}
+
+nav {
+    height: 50px;
+    /* Equally stretches each button */
+    display: flex;
+
+    /* Spacing from main body */
+    margin-bottom: 10px;
+}
+
+section {
+    background-color: rgb(122, 122, 122);
+    border: solid black 2px;
+}
+
+/* Navigational menu buttons */
+nav section {
+    font-size: 20px;
+    text-align: center;
+    /* Make each button the same width */
+    flex: 1;
+    margin: 0px 5px;
+}
+
+/* Sections in body */
+main section {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+footer {
+    /* Separate footer from main block */
+    margin-top: 10px;
 }

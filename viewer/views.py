@@ -13,6 +13,6 @@ def index(request):
 def details(request, name):
     template = loader.get_template('viewer/details.html')
     context = {
-        'name': name
+        'name': name,
     }
     return HttpResponse(template.render(context, request))
