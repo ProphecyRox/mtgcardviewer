@@ -2,6 +2,7 @@ body {
     /* Remove default body margin
         and center the body horizontally */
     margin: 0 auto;
+    /* All content is only within a certain length */
     width: 900px;
 
     background-color: #a0a0a0;
@@ -9,8 +10,13 @@ body {
 }
 
 /* Color all links */
-a:link {
+
+a:any-link {
     color: brown;
+}
+
+a:hover {
+    color: rgb(170, 72, 72);
 }
 
 header {
@@ -20,9 +26,9 @@ header {
 }
 
 h1 {
-    /* Center the header title */
+    /* Center the website title */
     text-align: center;
-    /* Remove default header margin */
+    /* Remove default h1 margin */
     margin: 0px;
 }
 
@@ -31,17 +37,18 @@ nav {
     /* Equally stretches each button */
     display: flex;
 
-    /* Spacing from main body */
+    /* Space from main */
     margin-bottom: 10px;
 }
 
+/* Both buttons and main sections */
 section {
     background-color: rgb(122, 122, 122);
     border: solid black 2px;
 }
 
 /* Navigational menu buttons */
-nav section {
+nav > section {
     font-size: 20px;
     text-align: center;
     /* Make each button the same width */
@@ -50,7 +57,7 @@ nav section {
 }
 
 /* Sections in body */
-main section {
+main > section {
     padding: 10px;
     margin-bottom: 10px;
 }
