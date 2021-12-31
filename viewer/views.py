@@ -16,3 +16,7 @@ def details(request, name):
         'name': name,
     }
     return HttpResponse(template.render(context, request))
+
+def contact(request):
+    template = loader.get_template('viewer/contact.html')
+    return HttpResponse(template.render({}, request))
