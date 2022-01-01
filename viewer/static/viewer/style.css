@@ -1,3 +1,7 @@
+html {
+    font-size: 16px;
+}
+
 body {
     /* Remove default body margin
         and center the body horizontally */
@@ -24,7 +28,7 @@ a:hover {
 header {
     /* Add manual spacing
         TODO: not sure if this is properly done */
-    padding: 20px 0px;
+    margin: 20px 0px;
 }
 
 h1 {
@@ -32,18 +36,21 @@ h1 {
     text-align: center;
     /* Remove default h1 margin */
     margin: 0px;
+    font-size: 2.5em;
 }
 
+/* Navigational menu */
 nav {
+    /* Button height */
     height: 50px;
     /* Equally stretches each button */
     display: flex;
 
-    /* Space from main */
+    /* Space from main section */
     margin-bottom: 10px;
 }
 
-/* Both nav menu buttons and main sections */
+/* Section/button boxes */
 section {
     background-color: rgb(122, 122, 122);
     border: solid black 2px;
@@ -52,21 +59,21 @@ section {
 
 /* Navigational menu buttons */
 nav > section {
-    font-size: 20px;
+    /* anchor inherits font attributes */
+    font-size: 1.4em;
     text-align: center;
-    /* Make each button the same width */
+    /* Make buttons equal width */
     flex: 1;
     margin: 0px 5px;
 }
 
-.nav_menu_text {
-    display: inline-block;
-    margin: auto 0;
+main > section {
+    padding: 15px;
+    margin-bottom: 10px;
 }
 
-main > section {
-    padding: 10px;
-    margin-bottom: 10px;
+main > section > h2 {
+    margin: 10px 0;
 }
 
 footer {
