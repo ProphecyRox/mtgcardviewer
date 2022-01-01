@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>MTG Card Viewer</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'viewer/style.css' %}">
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <h1>MTG Viewer</h1>
+        </header>
+
+        <!-- Navigation menu -->
+        <nav>
+            <ul>
+                <li class="rect">
+                    <a href="/" class="nav_button">
+                        Home
+                    </a>
+                </li>
+                <li class="rect">
+                    <a href="search/" class="nav_button">
+                        Database
+                    </a>
+                </li>
+                <li class="rect">
+                    <a href="contact/" class="nav_button">
+                        Contact Me
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Unique content -->
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            Copyright 2021 ProphecyRox
+        </footer>
+    </body>
+</html>

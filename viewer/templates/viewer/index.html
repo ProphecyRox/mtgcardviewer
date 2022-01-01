@@ -1,96 +1,51 @@
-<!--{% load static %} -->
+{% extends "viewer/base.html" %}
 
-<!DOCTYPE html>
-
-<html lang="en-US">
-    <head>
-        <meta charset="utf-8">
-        <title>MTG Card Viewer</title>
-        <!-- TODO: how does static linking work? -->
-        <link rel="stylesheet" type="text/css" href="{% static 'viewer/style.css' %}">
-    </head>
-    <body>
-        <header>
-            <h1>MTG Viewer</h1>
-        </header>
-
-        <!-- Navigation menu -->
-        <nav>
-            <ul>
-                <li class="rect">
-                    <a href="/" class="nav_button">
-                        Home
-                    </a>
-                </li>
-                <li class="rect">
-                    <a href="search/" class="nav_button">
-                        Database
-                    </a>
-                </li>
-                <li class="rect">
-                    <a href="contact/" class="nav_button">
-                        Contact Me
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <!-- Main page -->
-        <main>
-            <section class="rect">
-                <h2>Most Popular Cards</h2>
-                {% if first_five_cards %}
-                    <ol>
-                        {% for card in first_five_cards %}
-                            <li>
-                                <!-- TODO: show images dynamically -->
-                                <!-- <img src="../../static/viewer/Image.ashx.png"> -->
-                                <a href="/viewer/details/{{ card.name }}">
-                                    {{card.name}}
-                                    <!-- <img src={% static "viewer/{{ card.image }}" %}/> -->
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ol>
-                {% else %}
-                    There are no cards added yet.
-                {% endif %}
-            </section>
-
-            <section class="rect">
-                <h2>About</h2>
-                <p>
-                    This is a third-party website that allows you to search for any card in the <i>Arabian Nights</i> expansion.
-                    It does not contain any other expansions right now.
-                </p>
-
-                <p>
-                    List of expansions to be added:
-                </p>
-                <ul>
+{% block content %}
+    <section class="rect">
+        <h2>Most Popular Cards</h2>
+        {% if first_five_cards %}
+            <ol>
+                {% for card in first_five_cards %}
                     <li>
-                        <i>Antiquities</i>
+                        <a href="/viewer/details/{{ card.name }}">
+                            {{card.name}}
+                        </a>
                     </li>
-                    <li>
-                        <i>Fallen Empires</i>
-                    </li>
-                    <li>
-                        <i>Renaissance</i>
-                    </li>
-                </ul>
-            </section>
+                {% endfor %}
+            </ol>
+        {% else %}
+            There are no cards added yet.
+        {% endif %}
+    </section>
 
-            <section class="rect">
-                <h2>Reporting Bugs</h2>
-                <p>
-                    If there are any errors in this database, <em>please</em> let me know in the Contact Me page.
-                    I will fix them promptly.
-                </p>
-            </section>
-        </main>
+    <section class="rect">
+        <h2>About</h2>
+        <p>
+            This is a third-party website that allows you to search for any card in the <i>Arabian Nights</i> expansion.
+            It does not contain any other expansions right now.
+        </p>
 
-        <footer>
-            Copyright 2021 ProphecyRox
-        </footer>
-    </body>
-</html>
+        <p>
+            List of expansions to be added:
+        </p>
+        <ul>
+            <li>
+                <i>Antiquities</i>
+            </li>
+            <li>
+                <i>Fallen Empires</i>
+            </li>
+            <li>
+                <i>Renaissance</i>
+            </li>
+        </ul>
+    </section>
+
+    <section class="rect">
+        <h2>Reporting Bugs</h2>
+        <p>
+            If there are any errors in this database, <em>please</em> let me know in the Contact Me page.
+            I will fix them promptly.
+        </p>
+    </section>
+{% endblock %}
