@@ -20,3 +20,7 @@ def details(request, name):
 def contact(request):
     template = loader.get_template('viewer/contact.html')
     return HttpResponse(template.render({}, request))
+
+def search(request):
+    template = loader.get_template('viewer/search.html')
+    return HttpResponse(template.render({}, request))
