@@ -1,7 +1,10 @@
 {% extends "viewer/base.html" %}
 
+{% block title %}
+{% endblock %}
+
 {% block content %}
-    <section class="rect">
+    <section>
         <h2>Most Popular Cards</h2>
         {% if first_five_cards %}
             <ol>
@@ -18,7 +21,7 @@
         {% endif %}
     </section>
 
-    <section class="rect">
+    <section>
         <h2>About</h2>
         <p>
             This is a third-party website that allows you to search for any card in the <i>Arabian Nights</i> expansion.
@@ -41,7 +44,7 @@
         </ul>
     </section>
 
-    <section class="rect">
+    <section>
         <h2>Reporting Bugs</h2>
         <p>
             If there are any errors in this database, <em>please</em> let me know in the Contact Me page.

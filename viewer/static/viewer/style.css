@@ -51,9 +51,6 @@ h1 {
 /* ----------------- */
 
 nav {
-    /* Equally stretches each button */
-    /* display: flex; */
-
     /* Space from main section */
     margin-bottom: 10px;
 }
@@ -67,12 +64,20 @@ nav > ul {
     display: flex;
 }
 
-.rect {
+/* Main sections */
+
+main > section {
     border: solid black 2px;
-    border-radius: 5px;
-    background-color: gray;
+    border-radius: 10px;
+    background-color: rgb(148, 148, 148);
 }
 
+/* Nav list */
+main > section:first-child > p {
+    margin: 0;
+}
+
+/* Nav button */
 nav > ul > li {
     /* Equally stretch each button */
     flex: 1;
@@ -94,6 +99,10 @@ nav > ul > li:last-child {
 /* ------------------- */
 a.nav_button:any-link,
 a.nav_button:focus {
+    border: solid black 2px;
+    border-radius: 10px;
+    background-color:rgb(173, 173, 173);
+
     display: block;
 
     font-size: 1.3em;

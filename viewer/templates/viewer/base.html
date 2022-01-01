@@ -17,17 +17,17 @@
         <!-- Navigation menu -->
         <nav>
             <ul>
-                <li class="rect">
+                <li>
                     <a href="/viewer/" class="nav_button">
                         Home
                     </a>
                 </li>
-                <li class="rect">
+                <li>
                     <a href="/viewer/search/" class="nav_button">
                         Database
                     </a>
                 </li>
-                <li class="rect">
+                <li>
                     <a href="/viewer/contact/" class="nav_button">
                         Contact Me
                     </a>
@@ -37,6 +37,10 @@
 
         <!-- Unique content -->
         <main>
+            <section>
+                {% block title %}
+                {% endblock %}
+            </section>
             {% block content %}
             {% endblock %}
         </main>
