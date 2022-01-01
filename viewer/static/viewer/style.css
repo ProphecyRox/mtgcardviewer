@@ -14,7 +14,7 @@ body {
     font-family: system-ui, sans-serif;
 }
 
-/* Color all links */
+/* Color normal links */
 /* --------------- */
 a:any-link {
     color: brown;
@@ -22,7 +22,14 @@ a:any-link {
 
 a:hover {
     color: rgb(170, 72, 72);
+    background-color:rgba(219, 88, 88, 0.3);
 }
+
+a:active {
+    color: rgb(223, 90, 90);
+    background-color:rgba(139, 56, 56, 0.6);
+}
+
 /* --------------- */
 
 header {
@@ -34,38 +41,78 @@ header {
 h1 {
     /* Center the website title */
     text-align: center;
+
     /* Remove default h1 margin */
     margin: 0px;
     font-size: 2.5em;
 }
 
 /* Navigational menu */
+/* ----------------- */
+
 nav {
-    /* Button height */
-    height: 50px;
     /* Equally stretches each button */
-    display: flex;
+    /* display: flex; */
 
     /* Space from main section */
     margin-bottom: 10px;
 }
 
-/* Section/button boxes */
-section {
-    background-color: rgb(122, 122, 122);
-    border: solid black 2px;
-    border-radius: 5px;
+nav > ul {
+    /* Remove default list formatting */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
 }
 
-/* Navigational menu buttons */
-nav > section {
-    /* anchor inherits font attributes */
-    font-size: 1.4em;
-    text-align: center;
-    /* Make buttons equal width */
-    flex: 1;
-    margin: 0px 5px;
+.rect {
+    border: solid black 2px;
+    border-radius: 5px;
+    background-color: gray;
 }
+
+nav > ul > li {
+    /* Equally stretch each button */
+    flex: 1;
+    /* Horizontal margin between buttons */
+    margin-right: 10px;
+    /* Center text */
+    text-align: center;
+}
+
+nav > ul > li:first-child {
+    margin-left: 0px;
+}
+
+nav > ul > li:last-child {
+    margin-right: 0px;
+}
+
+/* Navigational button */
+/* ------------------- */
+a.nav_button:any-link,
+a.nav_button:focus {
+    display: block;
+
+    font-size: 1.3em;
+    text-decoration: none;
+    color: black;
+
+    height: 100%;
+    line-height: 3;
+}
+
+a.nav_button:hover {
+    background-color: rgb(100, 100, 100);
+}
+
+a.nav_button:active {
+    background-color: rgb(88, 88, 88);
+}
+
+/* ------------------- */
 
 main > section {
     padding: 15px;

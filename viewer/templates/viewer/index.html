@@ -16,26 +16,28 @@
 
         <!-- Navigation menu -->
         <nav>
-            <section>
-                <a href="index.html">
-                    Home
-                </a>
-            </section>
-            <section>
-                <a href="search.html">
-                    Database
-                </a>
-                </section>
-            <section>
-                <a href="contact.html">
-                    Contact Me
-                </a>
-            </section>
+            <ul>
+                <li class="rect">
+                    <a href="/" class="nav_button">
+                        Home
+                    </a>
+                </li>
+                <li class="rect">
+                    <a href="search/" class="nav_button">
+                        Database
+                    </a>
+                </li>
+                <li class="rect">
+                    <a href="contact/" class="nav_button">
+                        Contact Me
+                    </a>
+                </li>
+            </ul>
         </nav>
 
         <!-- Main page -->
         <main>
-            <section>
+            <section class="rect">
                 <h2>Most Popular Cards</h2>
                 {% if first_five_cards %}
                     <ol>
@@ -55,7 +57,7 @@
                 {% endif %}
             </section>
 
-            <section>
+            <section class="rect">
                 <h2>About</h2>
                 <p>
                     This is a third-party website that allows you to search for any card in the <i>Arabian Nights</i> expansion.
@@ -78,7 +80,7 @@
                 </ul>
             </section>
 
-            <section>
+            <section class="rect">
                 <h2>Reporting Bugs</h2>
                 <p>
                     If there are any errors in this database, <em>please</em> let me know in the Contact Me page.
