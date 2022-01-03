@@ -1,9 +1,14 @@
 {% extends "viewer/base.html" %}
 
+{% block title %}
+    {% if card %}
+        <h2>{{card.name}}</h2>
+    {% endif %}
+{% endblock %}
+
 {% block content %}
     <section>
         {% if card %}
-            <h2>{{card.name}}</h2>
             <dl>
                 <dt>
                     Mana Cost
