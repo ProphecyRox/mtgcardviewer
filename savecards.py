@@ -1,3 +1,6 @@
+# Script to save json data from https://mtgjson.com/
+# to the website's database
+
 import json
 from viewer.models import Card
 
