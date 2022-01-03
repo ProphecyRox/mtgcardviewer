@@ -42,9 +42,26 @@
             <article>
                 <h2>
                     {% block title %}
+                        Page Title Goes Here
                     {% endblock %}
                 </h2>
                 {% block content %}
+                <section>
+                    <h2>
+                        Section 1
+                    </h2>
+                    <p>
+                        This is a section of this webpage. All of the page's contents go into these sections.
+                    </p>
+                </section>
+                <section>
+                    <h2>
+                        Section 2
+                    </h2>
+                    <p>
+                        This is another section. You may add as many as you want.
+                    </p>
+                </section>
                 {% endblock %}
             </article>
         </main>
