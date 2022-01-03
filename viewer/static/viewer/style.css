@@ -146,6 +146,15 @@ section > h2 {
     margin: 10px 0;
 }
 
+/* Section content */
+
+/* A lot of elements have margins at the bottom */
+/* that collide with the section's padding, */
+/* so we remove the element's bottom margin to remove extra spacing */
+*:last-child {
+    margin-bottom: 0px;
+}
+
 footer {
     /* Separate footer from main block */
     margin: 10px 0px;
