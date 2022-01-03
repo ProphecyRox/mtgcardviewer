@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from .models import Card
 from django.template import loader #, render
+from django.core.exceptions import ObjectDoesNotExist
 
 def index(request):
     first_five_cards = Card.objects.all()[:5]
@@ -10,10 +11,15 @@ def index(request):
     }
     return HttpResponse(template.render(context, request))
 
-def details(request, name):
+def details(request, id):
     template = loader.get_template('viewer/details.html')
+    try:
+        card = Card.objects.get(id=id)
+    except ObjectDoesNotExist:
+        return HttpResponse("Error 404: Card not found")
+
     context = {
-        'name': name,
+        'card': card,
     }
     return HttpResponse(template.render(context, request))
 

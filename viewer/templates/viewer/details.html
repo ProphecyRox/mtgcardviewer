@@ -1,0 +1,44 @@
+{% extends "viewer/base.html" %}
+
+{% block content %}
+    <article>
+        <section>
+            {% if card %}
+                <h2>{{card.name}}</h2>
+                <dl>
+                    <dt>
+                        Mana Cost
+                    </dt>
+                    <dd>
+                        {{card.mana_cost}}
+                    </dd>
+
+                    <dt>
+                        Type
+                    </dt>
+                    <dd>
+                        {{card.card_type}}
+                    </dd>
+
+                    <dt>
+                        Ability
+                    </dt>
+                    <dd>
+                        {{card.ability_text}}
+                    </dd>
+                </dl>
+
+                <dt>
+                    Flavor
+                </dt>
+                <dd>
+                    {{card.flavor_text}}
+                </dd>
+
+            {% else %}
+                <h2>Error 404</h2>
+                <p>This card does not exist!</p>
+            {% endif %}
+        </section>
+    </article>
+{% endblock %}

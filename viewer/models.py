@@ -5,10 +5,8 @@ from django.db import models
 CHAR_FIELD_MAX_LEN = 1000
 
 class Card(models.Model):
-    name = models.CharField(max_length=CHAR_FIELD_MAX_LEN)
-    image = models.ImageField()
-    mana_cost = models.IntegerField()
-    type_line = models.CharField(max_length=CHAR_FIELD_MAX_LEN)
-    expansion = models.CharField(max_length=CHAR_FIELD_MAX_LEN)
-    ability_text = models.CharField(max_length=CHAR_FIELD_MAX_LEN)
-    flavor_text = models.CharField(max_length=CHAR_FIELD_MAX_LEN)
+    name = models.CharField("Card name", max_length=CHAR_FIELD_MAX_LEN)
+    mana_cost = models.IntegerField("Mana cost")
+    card_type = models.CharField("Type", max_length=CHAR_FIELD_MAX_LEN)
+    ability_text = models.CharField("Ability", max_length=CHAR_FIELD_MAX_LEN)
+    flavor_text = models.CharField("Flavor Text", max_length=CHAR_FIELD_MAX_LEN, blank=True)

@@ -1,21 +1,25 @@
+/* Style sheet for the entire website */
+
 html {
+    /* Base font size */
     font-size: 16px;
 }
 
 body {
-    /* Remove default body margin
-        and center the body horizontally */
+    /* Remove default margin and center all the contents horizontally */
     margin: 0 auto;
-    /* All content is only within a certain length */
+    /* All the contents are limited to this width */
     width: 900px;
 
     /* TODO: Why does it cover the whole page and not just the box? */
     background-image: url(../../static/viewer/texture.jpg);
-    font-family: system-ui, sans-serif;
+
+    font-family: sans-serif;
 }
 
 /* Color normal links */
 /* --------------- */
+
 a:any-link {
     color: brown;
 }
@@ -35,16 +39,18 @@ a:active {
 header {
     /* Add manual spacing
         TODO: not sure if this is properly done */
-    margin: 20px 0px;
+    margin: 40px 0px;
 }
 
+/* Website title */
 h1 {
-    /* Center the website title */
+    /* Center it */
     text-align: center;
 
-    /* Remove default h1 margin */
+    /* Remove default margin */
     margin: 0px;
-    font-size: 2.5em;
+
+    font-size: 3em;
 }
 
 /* Navigational menu */
@@ -61,18 +67,12 @@ nav > ul {
     padding: 0;
     list-style: none;
 
+    /* List buttons in a row */
     display: flex;
 }
 
-/* Main sections */
-
-main > section {
-    border: solid black 2px;
-    border-radius: 10px;
-    background-color: rgb(148, 148, 148);
-}
-
 /* Nav list */
+
 main > section:first-child > p {
     margin: 0;
 }
@@ -128,6 +128,27 @@ main > section {
     margin-bottom: 10px;
 }
 
+/* Page title */
+/* ---------- */
+main > section:first-child {
+    background-color: rgb(233, 241, 107);
+}
+
+main > section:first-child > h2 {
+    font-size: 1.8em;
+}
+
+/* ---------- */
+
+/* Main sections */
+main > section,
+article {
+    border: solid black 2px;
+    border-radius: 10px;
+    background-color: rgb(135, 166, 233);
+    padding: 10px;
+}
+x
 main > section > h2 {
     margin: 10px 0;
 }
@@ -140,4 +161,9 @@ footer {
 footer, header {
     /* Make text stand out from background */
     color:rgb(202, 202, 202);
+}
+
+/* TODO: Move Card details to another style sheet */
+dt {
+    font-weight: bold;
 }

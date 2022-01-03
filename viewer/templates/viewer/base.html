@@ -1,3 +1,5 @@
+<!-- This is the template used for all pages in this website -->
+<!-- It contains the header, navigation menu, content "block", and footer -->
 {% load static %}
 
 <!DOCTYPE html>
@@ -35,14 +37,17 @@
             </ul>
         </nav>
 
-        <!-- Unique content -->
         <main>
-            <section>
-                {% block title %}
+            <article>
+                <section>
+                    <h2>
+                        {% block title %}
+                        {% endblock %}
+                    </h2>
+                </section>
+                {% block content %}
                 {% endblock %}
-            </section>
-            {% block content %}
-            {% endblock %}
+            </article>
         </main>
 
         <!-- Footer -->
