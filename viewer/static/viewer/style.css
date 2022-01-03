@@ -134,24 +134,28 @@ article {
 }
 
 section {
-    margin-bottom: 10px;
-}
-
-section:last-child {
-    margin-bottom: 0px;
+    margin-bottom: 20px;
 }
 
 /* Section title */
 section > h2 {
-    margin: 10px 0;
+    margin: 0;
 }
 
 /* Section content */
 
-/* A lot of elements have margins at the bottom */
+/* A lot of elements at the top and bottom have margins */
 /* that collide with the section's padding, */
-/* so we remove the element's bottom margin to remove extra spacing */
-*:last-child {
+/* so we remove the element's respective margin to remove extra spacing */
+
+/* TODO: replace article and section with a class */
+article > *:first-child,
+section > *:first-child {
+    margin-top: 0px;
+}
+
+article > *:last-child,
+section > *:last-child {
     margin-bottom: 0px;
 }
 
