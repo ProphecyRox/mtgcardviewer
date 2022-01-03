@@ -37,14 +37,13 @@
             </ul>
         </nav>
 
+        <!-- Page content -->
         <main>
             <article>
-                <section>
-                    <h2>
-                        {% block title %}
-                        {% endblock %}
-                    </h2>
-                </section>
+                <h2>
+                    {% block title %}
+                    {% endblock %}
+                </h2>
                 {% block content %}
                 {% endblock %}
             </article>

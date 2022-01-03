@@ -2,54 +2,56 @@
 <!-- It has sections for the most popular cards, website description, and reporting bugs -->
 {% extends "viewer/base.html" %}
 
+{% block title %}
+    Home
+{% endblock %}
+
 {% block content %}
-    <article>
-        <section>
-            <h2>Most Popular Cards</h2>
-            {% if first_five_cards %}
-                <ol>
-                    {% for card in first_five_cards %}
-                        <li>
-                            <a href="/viewer/details/{{ card.id }}">
-                                {{card.name}}
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ol>
-            {% else %}
-                There are no cards added yet.
-            {% endif %}
-        </section>
+    <section>
+        <h2>Most Popular Cards</h2>
+        {% if first_five_cards %}
+            <ol>
+                {% for card in first_five_cards %}
+                    <li>
+                        <a href="/viewer/details/{{ card.id }}">
+                            {{card.name}}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ol>
+        {% else %}
+            There are no cards added yet.
+        {% endif %}
+    </section>
 
-        <section>
-            <h2>About</h2>
-            <p>
-                This is a third-party website that allows you to search for any card in the <i>Arabian Nights</i> expansion.
-                It does not contain any other expansions right now.
-            </p>
+    <section>
+        <h2>About</h2>
+        <p>
+            This is a third-party website that allows you to search for any card in the <i>Arabian Nights</i> expansion.
+            It does not contain any other expansions right now.
+        </p>
 
-            <p>
-                List of expansions to be added:
-            </p>
-            <ul>
-                <li>
-                    <i>Antiquities</i>
-                </li>
-                <li>
-                    <i>Fallen Empires</i>
-                </li>
-                <li>
-                    <i>Renaissance</i>
-                </li>
-            </ul>
-        </section>
+        <p>
+            List of expansions to be added:
+        </p>
+        <ul>
+            <li>
+                <i>Antiquities</i>
+            </li>
+            <li>
+                <i>Fallen Empires</i>
+            </li>
+            <li>
+                <i>Renaissance</i>
+            </li>
+        </ul>
+    </section>
 
-        <section>
-            <h2>Reporting Bugs</h2>
-            <p>
-                If there are any errors in this database, <em>please</em> let me know in the Contact Me page.
-                I will fix them promptly.
-            </p>
-        </section>
-    </article>
+    <section>
+        <h2>Reporting Bugs</h2>
+        <p>
+            If there are any errors in this database, <em>please</em> let me know in the Contact Me page.
+            I will fix them promptly.
+        </p>
+    </section>
 {% endblock %}

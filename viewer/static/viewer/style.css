@@ -10,15 +10,12 @@ body {
     margin: 0 auto;
     /* All the contents are limited to this width */
     width: 900px;
-
     /* TODO: Why does it cover the whole page and not just the box? */
     background-image: url(../../static/viewer/texture.jpg);
-
     font-family: sans-serif;
 }
 
 /* Color normal links */
-/* --------------- */
 
 a:any-link {
     color: brown;
@@ -34,28 +31,23 @@ a:active {
     background-color:rgba(139, 56, 56, 0.6);
 }
 
-/* --------------- */
-
+/* Website title */
 header {
-    /* Add manual spacing
-        TODO: not sure if this is properly done */
-    margin: 40px 0px;
+    /* Add spacing inside for h1 */
+    padding: 40px 0px;
 }
 
-/* Website title */
-h1 {
+header > h1 {
     /* Center it */
     text-align: center;
-
     /* Remove default margin */
     margin: 0px;
-
     font-size: 3em;
 }
 
 /* Navigational menu */
-/* ----------------- */
 
+/* This sets the flex layout for the buttons */
 nav {
     /* Space from main section */
     margin-bottom: 10px;
@@ -66,26 +58,22 @@ nav > ul {
     margin: 0;
     padding: 0;
     list-style: none;
-
-    /* List buttons in a row */
+    /* Treat buttons as flexible boxes in a row */
     display: flex;
 }
 
-/* Nav list */
+/* Navigational menu button */
 
-main > section:first-child > p {
-    margin: 0;
-}
-
-/* Nav button */
+/* List item adopts the flex mode from its parent list element */
+/* so it knows to stretch itself to fit the whole container */
 nav > ul > li {
-    /* Equally stretch each button */
+    /* Buttons have equal length */
     flex: 1;
-    /* Horizontal margin between buttons */
+    /* Spacing between buttons */
     margin-right: 10px;
-    /* Center text */
-    text-align: center;
 }
+
+/* No spacing after left- and right-most edges of nav menu */
 
 nav > ul > li:first-child {
     margin-left: 0px;
@@ -95,22 +83,33 @@ nav > ul > li:last-child {
     margin-right: 0px;
 }
 
-/* Navigational button */
-/* ------------------- */
-a.nav_button:any-link,
-a.nav_button:focus {
+/* All articles, sections, and buttons in the website will have a curved border */
+/* One article contains all the sections in each page */
+
+article,
+section,
+a.nav_button {
     border: solid black 2px;
     border-radius: 10px;
-    background-color:rgb(173, 173, 173);
+}
 
+/* Button fills up the horizontal space that was set by its parent--a list item */
+a.nav_button {
+    /* Link should act like a box */
     display: block;
-
+    /* Properties for all link states */
     font-size: 1.3em;
     text-decoration: none;
     color: black;
-
-    height: 100%;
+    text-align: center;
+    /* Box will grow in height to accomodate the text */
     line-height: 3;
+}
+
+/* Button's background color depends on the state of the link */
+a.nav_button:any-link,
+a.nav_button:focus {
+    background-color:rgb(173, 173, 173);
 }
 
 a.nav_button:hover {
@@ -121,41 +120,35 @@ a.nav_button:active {
     background-color: rgb(88, 88, 88);
 }
 
-/* ------------------- */
+/* Page title */
+main > article > h2 {
+    font-size: 1.8em;
+    margin: 15px 0px;
+}
 
-main > section {
-    padding: 15px;
+/* In page content, one article contains all the sections */
+section,
+article {
+    background-color: rgb(146, 146, 146);
+    padding: 20px;
+}
+
+section {
     margin-bottom: 10px;
 }
 
-/* Page title */
-/* ---------- */
-main > section:first-child {
-    background-color: rgb(233, 241, 107);
+section:last-child {
+    margin-bottom: 0px;
 }
 
-main > section:first-child > h2 {
-    font-size: 1.8em;
-}
-
-/* ---------- */
-
-/* Main sections */
-main > section,
-article {
-    border: solid black 2px;
-    border-radius: 10px;
-    background-color: rgb(135, 166, 233);
-    padding: 10px;
-}
-x
-main > section > h2 {
+/* Section title */
+section > h2 {
     margin: 10px 0;
 }
 
 footer {
     /* Separate footer from main block */
-    margin-top: 10px;
+    margin: 10px 0px;
 }
 
 footer, header {
