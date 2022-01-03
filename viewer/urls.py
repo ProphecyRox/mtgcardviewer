@@ -5,7 +5,7 @@ urlpatterns = [
     path('', views.index),
     # Card details
     # Retrieve card using its database id
-    path('details/<int:id>/', views.details),
-    path('search/', views.search),
-    path('contact/', views.contact)
+    path('details/<int:id>/', views.details, name="details"),
+    path('search/', views.search, name="search"),
+    path('contact/', views.contact, name="contact")
 ]
