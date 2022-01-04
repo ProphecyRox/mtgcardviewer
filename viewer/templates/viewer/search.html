@@ -3,7 +3,51 @@
 {% block title %}
     Card Search
 {% endblock %}
+
 {% block content %}
-<section>
-</section>
-{% endblock %}
+    <!-- Form -->
+    <section>
+        {% comment %}
+            novalidate tells the browser not to validate form since
+            Django already handles it
+        {% endcomment %}
+        <form method="post" action="{% url 'search' %}" novalidate>
+            {{ form_html }}
+            <input type="submit" value="Search"></input>
+            <!-- Added for security reasons -->
+            {% csrf_token %}
+        </form>
+    </section>
+
+    <!-- Search results -->
+    {% if search_performed %}
+        <!-- Show results -->
+        {% if search_results %}
+            <!-- At least one result -->
+            <section>
+                <p>Number of results: {{search_results|length}}</p>
+            </section>
+            {% for result in search_results %}
+                <section>
+                    <h2>
+                        <!-- Link to details about this card -->
+                        <a href="{% url 'details' result.id %}">
+                            {{result.name}}
+                        </a>
+                    </h2>
+                </section>
+            {% endfor %}
+        {% else %}
+            <!-- No results -->
+            <section>
+                <p>
+                    No results found.
+                </p>
+            </section>
+        {% endif %}
+    {% else %}
+        <section>
+            Enter the name of a card and hit the search button...
+        </section>
+    {% endif %}
+ {% endblock %}
