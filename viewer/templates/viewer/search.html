@@ -21,30 +21,20 @@
 
     <!-- Search results -->
     {% if search_performed %}
-        <!-- Show results -->
-        {% if search_results %}
-            <!-- At least one result -->
+        <!-- At least one result -->
+        <section>
+            <p>Number of results: {{search_results|length}}</p>
+        </section>
+        {% for result in search_results %}
             <section>
-                <p>Number of results: {{search_results|length}}</p>
+                <h2>
+                    <!-- Link to details about this card -->
+                    <a href="{% url 'details' result.id %}">
+                        {{result.name}}
+                    </a>
+                </h2>
             </section>
-            {% for result in search_results %}
-                <section>
-                    <h2>
-                        <!-- Link to details about this card -->
-                        <a href="{% url 'details' result.id %}">
-                            {{result.name}}
-                        </a>
-                    </h2>
-                </section>
-            {% endfor %}
-        {% else %}
-            <!-- No results -->
-            <section>
-                <p>
-                    No results found.
-                </p>
-            </section>
-        {% endif %}
+        {% endfor %}
     {% else %}
         <section>
             Enter the name of a card and hit the search button...
