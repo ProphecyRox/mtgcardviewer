@@ -13,7 +13,7 @@
             <ol>
                 {% for card in first_five_cards %}
                     <li>
-                        <a href="/viewer/details/{{ card.id }}">
+                        <a href="{% url 'details' card.id %}">
                             {{card.name}}
                         </a>
                     </li>
