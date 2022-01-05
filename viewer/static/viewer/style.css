@@ -11,7 +11,7 @@ body {
     /* All the contents are limited to this width */
     width: 900px;
     /* TODO: Why does it cover the whole page and not just the box? */
-    background-image: url(../../static/viewer/texture.jpg);
+    background-image: url("texture.jpg");
     font-family: sans-serif;
 }
 
