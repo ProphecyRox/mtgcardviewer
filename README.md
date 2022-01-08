@@ -12,3 +12,7 @@ This website only contains the source files for the website and migrations neede
 3. To download cards, go to [MTGJSON](https://mtgjson.com/downloads/all-sets/) and download a json file for a set.
 4. In `savecards.py`, change the name of the json file you are opening.
 5. Run `savecards.py` to store the cards in the database.
+
+## TODO List
+1. Add card image support
+2. Add commenting and rating system
